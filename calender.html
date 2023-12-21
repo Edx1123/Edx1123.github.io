@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edx</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-top: 60px; /* Adjusted to account for the fixed header */
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    #homePage {
+      display: none;
+    }
+
+    #logoutBtn {
+      background-color: #ff3333;
+      margin-top: 20px;
+    }
+
+    #homePage h2 {
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+
+    .listing-container {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .listing-item {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .view-listings-btn {
+      background-color: #3498db;
+      margin-top: 20px;
+    }
+
+    .contact-section {
+      margin-top: 40px;
+    }
+
+    .contact-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Edx</h1>
+  </header>
+
+  <div class="container" id="loginPage">
+    <h2>Login to Your Account</h2>
+    <input type="text" placeholder="Username" id="username">
+    <input type="password" placeholder="Password" id="password">
+    <button type="button" onclick="login()">Login</button>
+  </div>
+
+  <div class="container" id="homePage">
+    <h2>Welcome to Home Rental App</h2>
+    <div class="listing-container">
+      <div class="listing-item">
+        <h3>Modern Apartment</h3>
+        <p>Contemporary apartment with all amenities. $1200/month</p>
+      </div>
+      <div class="listing-item">
+        <h3>Spacious House</h3>
+        <p>Large house perfect for families. $2000/month</p>
+      </div>
+      <!-- Add more listings as needed -->
+    </div>
+    <button class="view-listings-btn" onclick="viewListings()">View Listings</button>
+    <button id="logoutBtn" onclick="logout()">Logout</button>
+
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="button">Send Message</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Basic check for username and password (Replace with actual authentication logic)
+      if (username === 'revanth' && password === 'reddy') {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('homePage').style.display = 'block';
+      } else {
+        alert('Invalid credentials. Please try again.');
+      }
+    }
+
+    function logout() {
+      document.getElementById('loginPage').style.display = 'block';
+      document.getElementById('homePage').style.display = 'none';
+    }
+
+    function viewListings() {
+      alert('Implement your logic to view listings here.');
+      // Add logic to navigate to the listings page or display more information.
+    }
+  </script>
+
+</body>
+</html>
